@@ -1,32 +1,77 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { Text, View, StyleSheet, Image, Switch } from 'react-native';
 
+const link = {uri: 'http://bit.ly/2Dwlo94'}
+const size = {width: 100, height: 100};
 
-export default class Profile extends React.Component{
-  static navigationOptions = {
-    title: 'Profile',
+class Profile extends Component{
+  constructor(){
+    super();
+
+    this.state = {
+      textVal: ""
+    }
   }
+
 
   render(){
-    const { navigate } = this.props.navigation;
     return(
-      <View style={container}>
-        <Text
-          onPress = {()=>navigate('Home')}>
-          navigate to Home
-        </Text>
+      <View>
+        <View style={container} >
+          <Image source={link} style={size} />
+          <View style={userinfo}>
+            <Text style={username}>Baseem</Text>
+            <Text style={username}>Age: 21</Text>
+            <Text style={username}>BOX: CrossFit Kuleana</Text>
+          </View>
+        </View>
+        <View style={midsection} ></View>
+        <View style={userinfo} >
+          <Text style={username}>Baseem</Text>
+          <Text style={username}>Age: 21</Text>
+          <Text style={username}>BOX: CrossFit Kuleana</Text> 
+        </View>
+        <View style={midsection} ></View>
+        <View style={userinfo} >
+          <Text style={username}>Baseem</Text>
+          <Text style={username}>Age: 21</Text>
+          <Text style={username}>BOX: CrossFit Kuleana</Text> 
+        </View>
+        <View style={midsection} ></View>
+        <View style={userinfo} >
+          <Text style={username}>Baseem</Text>
+          <Text style={username}>Age: 21</Text>
+          <Text style={username}>BOX: CrossFit Kuleana</Text> 
+        </View>
+        
       </View>
+
       )
   }
-}
 
+}
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    marginTop: 20
+    width: 350,
+    flexDirection: "row",
+    height: 100,
+    marginTop: 10,
+    marginBottom: 20
   },
+  username:{
+    marginLeft: 10
+  },
+  userinfo:{
+    flex: 1,
+    padding: 10
+  },
+  midsection:{
+    backgroundColor: "grey",
+    height: 10
+  }
+
 });
 
-const {container} = styles;
+const { container, username, userinfo, midsection } = styles;
+export default Profile;
