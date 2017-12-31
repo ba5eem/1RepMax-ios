@@ -12,7 +12,7 @@ export default class Tabs extends Component {
   // Initialize State
   state = {
     // First tab is active by default
-    activeTab: 2
+    activeTab: 0
   }
 
   // Pull children out of props passed from App component
