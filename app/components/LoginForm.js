@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput,Image,TouchableOpacity, KeyboardAvoidingView, StatusBar } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
 
 
@@ -7,6 +8,25 @@ import { StyleSheet, Text, View, TextInput,Image,TouchableOpacity, KeyboardAvoid
 
 
 export default class LoginForm extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state {
+      username: '',
+      password: ''
+    }
+  }
+
+  componentDidMount() {
+    this._loadInitalState().done();
+  }
+
+  _loadInitalState = async () => {
+    var value = await AsyncStorage.getItem('user');
+    if(value !== null){
+      this.props.navigation.navigate('Profile');
+    }
+  }
 
 
 

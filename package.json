@@ -21,8 +21,12 @@
   "dependencies": {
     "auth0-js": "^9.0.2",
     "expo": "^23.0.4",
+    "express": "^4.16.2",
+    "pg": "^7.4.0",
+    "pg-hstore": "^2.3.2",
     "react": "16.0.0",
     "react-native": "0.50.3",
-    "react-navigation": "^1.0.0-beta.22"
+    "react-navigation": "^1.0.0-beta.22",
+    "sequelize": "^4.28.6"
   }
 }
